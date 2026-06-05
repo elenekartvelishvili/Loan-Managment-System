@@ -110,7 +110,7 @@ SQL Server Database
 
 ---
 
-# 🧰 Tech Stack
+#  Tech Stack
 
 - ASP.NET Core Web API (.NET 10)
 - Entity Framework Core
@@ -142,23 +142,23 @@ SQL Server Database
 
 ---
 
-# Installation & Setup
+#  Installation & Setup
 
 ## 1. Clone repository
+git clone https://github.com/elenekartvelishvili/Loan-Management-System.git  
+cd Loan-Management-System  
 
-git clone https://github.com/elenekartvelishvili/Loan-Management-System.git
-cd Loan-Management-System
-
-2. Configure Database
+## 2. Configure Database
 Update appsettings.json:
-"ConnectionStrings": {
-  "DefaultConnection": "Server=YOUR_SERVER;Database=LoanDB;Trusted_Connection=True;"
-}
-3. Apply migrations
+"ConnectionStrings": { "DefaultConnection": "Server=YOUR_SERVER;Database=LoanDB;Trusted_Connection=True;" }
+
+## 3. Apply migrations
 dotnet ef database update
-4. Run the project
+
+## 4. Run the project
 dotnet run
-5. Open Swagger
+
+## 5. Open Swagger
 https://localhost:{port}/swagger
 ---
 
@@ -175,18 +175,32 @@ Role: Admin
 dotnet test
 
 ---
-## Key Endpoints
-Auth
-POST /api/Auth/register
-POST /api/Auth/login
-Customers
-GET /api/Customer
-GET /api/Customer/loans
-POST /api/Customer
-DELETE /api/customer/{id} (Admin only)
-Loans
-POST /api/Loans/CreateApplication
-GET /api/Loans{id}
-Payments
-POST /api/Payments
+##  Loan Management System – API Endpoints
+
+###  Authentication
+
+- POST /api/Auth/register – Register a new user  
+- POST /api/Auth/login – Login and receive authentication token  
+
+---
+
+###  Customers
+
+- GET /api/Customer – Get all customers  
+- GET /api/Customer/loans – Get loans for a specific customer  
+- POST /api/Customer – Create a new customer  
+- DELETE /api/Customer/{id} – Delete a customer (Admin only)  
+
+---
+
+###  Loans
+
+- POST /api/Loans/CreateApplication – Create a loan application  
+- GET /api/Loans/{id} – Get loan details by ID  
+
+---
+
+###  Payments
+
+- POST /api/Payments – Make a payment  
 
