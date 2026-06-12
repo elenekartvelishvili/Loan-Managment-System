@@ -96,17 +96,19 @@ Instead of physically deleting records:
 
 ---
 
-#  Architecture
-Controllers
-↓
-Services (Business Logic)
-↓
-Repositories (Data Access Layer)
-↓
-Entity Framework Core
-↓
-SQL Server Database
+## Architecture
 
+```text
+Controllers
+    ↓
+Services (Business Logic)
+    ↓
+Repositories (Data Access Layer)
+    ↓
+Entity Framework Core
+    ↓
+SQL Server Database
+```
 
 ---
 
@@ -150,7 +152,11 @@ cd Loan-Management-System
 
 ## 2. Configure Database
 Update appsettings.json:
-"ConnectionStrings": { "DefaultConnection": "Server=YOUR_SERVER;Database=LoanDB;Trusted_Connection=True;" }
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=LoanDB;Trusted_Connection=True;MultipleActiveResultSets=true"
+  }
+}
 
 ## 3. Apply migrations
 dotnet ef database update
